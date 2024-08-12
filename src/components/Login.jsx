@@ -3,42 +3,53 @@ import { useAuth } from "../contexts/AuthContext";
 
 function Login() {
     const { actions } = useAuth();
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch("https://sandbox.academiadevelopers.com/users/profiles/login/", {
+            const response = await fetch("https://sandbox.academiadevelopers.com/api-auth/", { 
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({ username, password }), 
             });
 
-            const result = await response.json();
-            if (response.ok) {
-                const { token, user__id } = result;
-                actions.login(token, user__id); // Asegúrate de que `actions` contenga `login`
-            } else {
-                // Manejo de errores
-                console.error("Error:", result.message);
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.detail || 'Error en la solicitud'); 
             }
+
+            const result = await response.json();
+            const { token, username: returnedUsername } = result; 
+
+            actions.login(token, returnedUsername); 
         } catch (error) {
-            console.error("Error en la solicitud:", error);
+            console.error("Error en la solicitud:", error.message || error);
         }
     };
 
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                Email:
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                Username:
+                <input 
+                    type="text" 
+                    value={username} 
+                    onChange={(e) => setUsername(e.target.value)} 
+                    required
+                />
             </label>
             <label>
                 Contraseña:
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <input 
+                    type="password" 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    required
+                />
             </label>
             <button type="submit">Iniciar sesión</button>
         </form>

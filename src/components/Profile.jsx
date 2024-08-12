@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -69,9 +68,7 @@ function Profile() {
                                     }}
                                 >
                                     <img
-                                        src={`${
-                                            import.meta.env.VITE_API_BASE_URL
-                                        }${userData.state.icon}`}
+                                        src={`https://sandbox.academiadevelopers.com${userData.state.icon}`}
                                         alt="State icon"
                                         style={{
                                             height: "20px",

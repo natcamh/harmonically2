@@ -1,24 +1,25 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../components/Home";
 import Login from "../components/Login";
-import ProtectedRoute from "../routes/ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute";
 import Profile from "../components/Profile";
-
-const Router = createBrowserRouter([
+import Layout from "./Layout";
+import App from "../App"; 
+const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />,
+        element: <App />, 
         children: [
             {
-                index: true, // path: "/"
+                index: true,
                 element: <Home />,
             },
             {
-                path: "/login",
+                path: "login",
                 element: <Login />,
             },
             {
-                path: "/profile",
+                path: "profile",
                 element: (
                     <ProtectedRoute>
                         <Profile />
@@ -33,4 +34,4 @@ const Router = createBrowserRouter([
     },
 ]);
 
-export { Router };
+export { router };
