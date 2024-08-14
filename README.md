@@ -1,9 +1,8 @@
 ## Harmonically 
 
-Harmonically es una aplicación de música con un diseño vibrante y energético que muestra canciones, álbums, artistas y géneros.
-Nace como proyecto final para la materia Programación  3 de la Tecnicatura Universitaria de Desarrollo de Software de Upateco. 
+Harmonically es una aplicación de música que nace como proyecto final para la materia Programación 3 de la Tecnicatura Universitaria de Desarrollo de Software de Upateco. 
 
-### Diseño en Figma 
+Esta aplicación muestra en su Home diferentes listas de canciones, albums, artistas y generos. Se puede iniciar y cerrar sesión y una vez el usuario esté logueado, el mismo puede agregar una canción, editarla  e incluso eliminarla. El usuario no tiene permitido editar o eliminar canciones que no hayan sido creadas por él. 
 
-Se hizo una previa maquetación en Figma que se puede encontrar aquí:
-[Figma](https://www.figma.com/design/wmDVBQXkuuUVHzmwqzpUNu/Harmonically?node-id=0-1&t=xTkhyDwav2WedJqZ-1)
+
+
