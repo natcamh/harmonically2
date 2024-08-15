@@ -24,11 +24,11 @@ const PlaylistList = () => {
 
   return (
     <div>
-      <h1>Playlists</h1>
+      <h2>Playlists</h2>
       <ul>
         {playlists.map((playlist) => (
           <li key={playlist.id}>
-            <h2>{playlist.name}</h2>
+            <h3>{playlist.name}</h3>
             {playlist.description && <p>{playlist.description}</p>}
             <p>{playlist.public ? 'Public' : 'Private'}</p>
             <p>Owner ID: {playlist.owner}</p>

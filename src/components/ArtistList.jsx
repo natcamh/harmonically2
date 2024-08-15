@@ -24,11 +24,11 @@ const ArtistList = () => {
 
   return (
     <div>
-      <h1>Artists</h1>
+      <h2>Artistas</h2>
       <ul>
         {artists.map((artist) => (
           <li key={artist.id}>
-            <h2>{artist.name}</h2>
+            <h3>{artist.name}</h3>
             {artist.bio && <p>{artist.bio}</p>}
             {artist.website && <a href={artist.website} target="_blank" rel="noopener noreferrer">Website</a>}
             {artist.image && <img src={artist.image} alt={`${artist.name} profile`} style={{ width: '100px', height: '100px' }} />}

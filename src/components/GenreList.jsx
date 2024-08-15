@@ -24,11 +24,11 @@ const GenreList = () => {
 
   return (
     <div>
-      <h1>Genres</h1>
+      <h2>Generos</h2>
       <ul>
         {genres.map((genre) => (
           <li key={genre.id}>
-            <h2>{genre.name}</h2>
+            <h3>{genre.name}</h3>
             <p>{genre.description}</p>
           </li>
         ))}

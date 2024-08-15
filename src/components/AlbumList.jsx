@@ -24,11 +24,11 @@ const AlbumList = () => {
 
   return (
     <div>
-      <h1>Albums</h1>
+      <h2>Albums</h2>
       <ul>
         {albums.map((album) => (
           <li key={album.id}>
-            <h2>{album.title}</h2>
+            <h3>{album.title}</h3>
             <p>Year: {album.year || 'Unknown'}</p>
             {album.cover ? (
               <img src={album.cover} alt={`${album.title} cover`} style={{ width: '100px', height: '100px' }} />

@@ -24,17 +24,27 @@ const SongList = () => {
 
   return (
     <div>
-      <h1>Songs</h1>
-      <ul>
+      <h2>Canciones</h2>
+      <ul className='song-list'>
         {songs.map((song) => (
-          <li key={song.id}>
-            <h2>{song.title}</h2>
-            {song.year && <p>Year: {song.year}</p>}
-            {song.duration && <p>Duration: {song.duration} seconds</p>}
-            {song.song_file && <a href={song.song_file} target="_blank" rel="noopener noreferrer">Listen</a>}
-            {song.cover && <img src={song.cover} alt={`${song.title} cover`} style={{ width: '100px', height: '100px' }} />}
-            {!song.cover && <p>No cover available</p>}
-          </li>
+          <li key={song.id} className="song-item">
+          <div className="song-content">
+            {song.cover ? (
+              <img src={song.cover} alt={`${song.title} cover`} className="song-cover" />
+            ) : (
+              <div className="no-cover">No cover available</div>
+            )}
+            <div className="song-info">
+              <h3 className="song-title">{song.title}</h3>
+              {song.duration && <p className="song-duration">{song.duration} segundos</p>}
+              {song.song_file && (
+                <a href={song.song_file} target="_blank" rel="noopener noreferrer" className="play-icon">
+                  <img src="/play-icon.svg" alt="Play" />
+                </a>
+              )}
+            </div>
+          </div>
+        </li>
         ))}
       </ul>
     </div>

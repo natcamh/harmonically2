@@ -24,13 +24,6 @@ const Home = () => {
 
   return (
     <div>
-      <nav style={{ marginBottom: '20px' }}>
-  <ul style={{ listStyleType: 'none', padding: 0 }}>
-    <li style={{ display: 'inline', marginRight: '10px' }}><Link to="/login">Login</Link></li>
-    <li style={{ display: 'inline' }}><Link to="/profile">Profile</Link></li>
-  </ul>
-</nav>
-      <h1>Home</h1>
       <SongList songs={songs} />
       <PlaylistList playlists={playlists} />
       <AlbumList albums={albums} />
