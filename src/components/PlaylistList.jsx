@@ -23,20 +23,24 @@ const PlaylistList = () => {
   }
 
   return (
-    <div>
+    <div className="playlist-list">
       <h2>Playlists</h2>
-      <ul>
+      <ul className="playlist-list-horizontal">
         {playlists.map((playlist) => (
-          <li key={playlist.id}>
-            <h3>{playlist.name}</h3>
-            {playlist.description && <p>{playlist.description}</p>}
-            <p>{playlist.public ? 'Public' : 'Private'}</p>
-            <p>Owner ID: {playlist.owner}</p>
-            {playlist.entries.length > 0 ? (
-              <p>{playlist.entries.length} songs</p>
-            ) : (
-              <p>No songs in this playlist</p>
-            )}
+          <li key={playlist.id} className="playlist-item">
+            <div className="playlist-content">
+              <div className="playlist-info">
+                <h3 className="playlist-name">{playlist.name}</h3>
+                {playlist.description && <p className="playlist-description">{playlist.description}</p>}
+                <p className="playlist-visibility">{playlist.public ? 'Public' : 'Private'}</p>
+                <p className="playlist-owner">Owner ID: {playlist.owner}</p>
+                {playlist.entries.length > 0 ? (
+                  <p className="playlist-entries">{playlist.entries.length} songs</p>
+                ) : (
+                  <p className="playlist-no-entries">No songs in this playlist</p>
+                )}
+              </div>
+            </div>
           </li>
         ))}
       </ul>

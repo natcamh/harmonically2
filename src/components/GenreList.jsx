@@ -23,13 +23,15 @@ const GenreList = () => {
   }
 
   return (
-    <div>
-      <h2>Generos</h2>
-      <ul>
+    <div className="genre-list">
+      <h2>Géneros</h2>
+      <ul className="genre-list-horizontal">
         {genres.map((genre) => (
-          <li key={genre.id}>
-            <h3>{genre.name}</h3>
-            <p>{genre.description}</p>
+          <li key={genre.id} className="genre-item">
+            <div className="genre-content">
+              <h3 className="genre-name">{genre.name}</h3>
+              <p className="genre-description">{genre.description}</p>
+            </div>
           </li>
         ))}
       </ul>

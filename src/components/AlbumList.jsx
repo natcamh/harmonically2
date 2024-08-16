@@ -25,17 +25,21 @@ const AlbumList = () => {
   return (
     <div>
       <h2>Albums</h2>
-      <ul>
+      <ul className="album-list-horizontal">
         {albums.map((album) => (
-          <li key={album.id}>
-            <h3>{album.title}</h3>
-            <p>Year: {album.year || 'Unknown'}</p>
+          <li key={album.id} className="album-item">
+          <div className="album-content">
             {album.cover ? (
-              <img src={album.cover} alt={`${album.title} cover`} style={{ width: '100px', height: '100px' }} />
+              <img src={album.cover} alt={`${album.title} cover`} className="album-cover" />
             ) : (
-              <p>No cover available</p>
+              <div className="no-cover">No cover available</div>
             )}
-          </li>
+            <div className="album-info">
+              <h3 className="album-title">{album.title}</h3>
+              <p className="album-year">Year: {album.year || 'Unknown'}</p>
+            </div>
+          </div>
+        </li>
         ))}
       </ul>
     </div>

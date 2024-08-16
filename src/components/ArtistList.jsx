@@ -23,16 +23,23 @@ const ArtistList = () => {
   }
 
   return (
-    <div>
+    <div className="artist-list">
       <h2>Artistas</h2>
-      <ul>
+      <ul className="artist-list-horizontal">
         {artists.map((artist) => (
-          <li key={artist.id}>
-            <h3>{artist.name}</h3>
-            {artist.bio && <p>{artist.bio}</p>}
-            {artist.website && <a href={artist.website} target="_blank" rel="noopener noreferrer">Website</a>}
-            {artist.image && <img src={artist.image} alt={`${artist.name} profile`} style={{ width: '100px', height: '100px' }} />}
-            {!artist.image && <p>No image available</p>}
+          <li key={artist.id} className="artist-item">
+            <div className="artist-content">
+              <div className="artist-info">
+                <h3 className="artist-name">{artist.name}</h3>
+                {artist.bio && <p className="artist-bio">{artist.bio}</p>}
+                {artist.website && <a href={artist.website} target="_blank" rel="noopener noreferrer" className="artist-website">Website</a>}
+                {artist.image ? (
+                  <img src={artist.image} alt={`${artist.name} profile`} className="artist-image" />
+                ) : (
+                  <p className="no-image">No image available</p>
+                )}
+              </div>
+            </div>
           </li>
         ))}
       </ul>

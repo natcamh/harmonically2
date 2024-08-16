@@ -1,45 +1,45 @@
 body {
-    font-family: 'Quicksand';
-    background-color: #f4f4f4;
-    margin: 5em 0 0 1em;
-    padding: 20px;
-    color: #8E44AD;
-  }
+  font-family: 'Quicksand';
+  background-color: #f4f4f4;
+  margin: 5em 0 0 1em;
+  padding: 20px;
+  color: #8E44AD;
+}
 
 .navbar {
-    background-color: #8E44AD;
-    width: 100%;
-    padding: 35px 0;
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #8E44AD;
+  width: 100%;
+  padding: 35px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-brand {
-    display: flex;
-    align-items: center;
-    margin-left: 1em; 
+  display: flex;
+  align-items: center;
+  margin-left: 1em; 
 }
 
 .navbar-icon {
-    width: 40px; 
-    height: 40px;
-    margin-right: 10px; 
+  width: 40px; 
+  height: 40px;
+  margin-right: 10px; 
 }
 
 .navbar-title {
-    font-size: 1.5em;
-    color: white;
-    font-weight: bold;
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
 }
 
 .navbar-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
 .navbar-links a {
@@ -50,9 +50,8 @@ body {
 }
 
 .navbar-links a:hover {
-text-decoration: underline;
+  text-decoration: underline;
 }
-
 
 footer {
   background-color: #8E44AD;
@@ -63,6 +62,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  margin-top: 50px; 
 }
   
 .home {
@@ -72,7 +72,7 @@ footer {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+}
   
 .input {
   width: calc(50% - 10px);
@@ -80,7 +80,7 @@ footer {
   margin: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  }
+}
   
 .button {
   padding: 10px 15px;
@@ -90,52 +90,29 @@ footer {
   border-radius: 4px;
   cursor: pointer;
   margin: 5px;
-  }
+}
   
 .button:hover {
   background-color: #1ABC9C;
-  }
-  
-.song-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  }
-  
-.song-item p {
-  margin: 0;
-  font-size: 18px;
-  }
-  
-.add-song-form,
-.edit-song-form {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  }
-  
-  .song-list {
-    display: flex;
-    flex-direction: row; 
-    gap: 50px; 
-    justify-content: center; 
 }
-
 
 .song-item {
   list-style: none; 
-  margin: 10px;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px; 
+  height: 300px; 
+  text-align: center;
+  color: white;
 }
 
 .song-content {
   background-color: #9B59B6; 
   border-radius: 10px;
-  width: 150px;
+  width: 200px;
+  height: 300px;
   padding: 10px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .song-cover {
@@ -146,6 +123,9 @@ footer {
 
 .song-info {
   color: white;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
 }
 
 .song-title {
@@ -162,4 +142,60 @@ footer {
   width: 24px; 
   height: 24px;
   cursor: pointer;
+}
+
+.album-list,
+.playlist-list,
+.artist-list,
+.genre-list,
+.song-list {
+  padding: 20px;
+}
+
+.album-list-horizontal,
+.playlist-list-horizontal,
+.song-list,
+.artist-list-horizontal,
+.genre-list-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px; 
+  gap: 20px; 
+}
+
+.album-item,
+.playlist-item,
+.artist-item,
+.genre-item {
+  background-color: #9B59B6; 
+  border-radius: 10px;
+  padding: 15px;
+  width: 200px; 
+  height: 300px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  overflow: hidden; 
+}
+
+.album-cover,
+.artist-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.album-title,
+.artist-name,
+.genre-name,
+.playlist-name {
+  font-size: 1em;
+  margin: 5px 0;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
