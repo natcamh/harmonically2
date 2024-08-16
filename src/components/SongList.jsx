@@ -39,7 +39,7 @@ const SongList = () => {
               {song.duration && <p className="song-duration">{song.duration} segundos</p>}
               {song.song_file && (
                 <a href={song.song_file} target="_blank" rel="noopener noreferrer" className="play-icon">
-                  <img src="/play-icon.svg" alt="Play" />
+                  <img src="/play-icono.svg" alt="Play" />
                 </a>
               )}
             </div>
